@@ -20,11 +20,11 @@ cd Ten-Thousand-Buddhas/tools/
 
 需要下载对应系统的
 
-xray---mkdir xray-->https://github.com/chaitin/xray/releases/download/1.8.4/xray_linux_amd64.zip-->unzip xray_linux_amd64.zip
+xray --- mkdir xray --> wget https://github.com/chaitin/xray/releases/download/1.8.4/xray_linux_amd64.zip --> unzip xray_linux_amd64.zip
 
-crawlergo---git clone https://github.com/Qianlitp/crawlergo.git-->cd crawlergo/cmd-->go build-->mv crawlergo ../
+crawlergo --- git clone https://github.com/Qianlitp/crawlergo.git --> cd crawlergo/cmd --> go build --> mv crawlergo ../
 
-wafW00f---git clone https://github.com/EnableSecurity/wafw00f.git
+wafW00f --- git clone https://github.com/EnableSecurity/wafw00f.git
 
 
 
