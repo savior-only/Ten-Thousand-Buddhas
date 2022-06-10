@@ -6,6 +6,9 @@
 
 python3 TTBS.py
 
+<img width="840" alt="图片" src="https://user-images.githubusercontent.com/69495405/173049358-3d5a7cb9-2307-44ac-88f6-4f43c0f88c65.png">
+
+
 ## 配置文件
 
 lib/config.py
