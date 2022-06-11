@@ -24,13 +24,11 @@ def xray_webhook():
 
     if "ratio_progress" in vuln:
          return "ok"
-    content = """
-    ## xray发现了新漏洞
-    url: {url}
-    插件/漏洞: {plugin}
-    发现时间: {create_time}
-    请及时查看和处理
-    """.format(url=vuln["target"]["url"], plugin=vuln["plugin"], create_time=str(datetime.datetime.fromtimestamp(vuln["create_time"] / 1000)))
+    content = """### xray发现了新漏洞
+url: {url}
+插件/漏洞: {plugin}
+发现时间: {create_time}
+请及时查看和处理!!!""".format(url=vuln["target"]["url"], plugin=vuln["plugin"], create_time=str(datetime.datetime.fromtimestamp(vuln["create_time"] / 1000)))
     #print(vuln["target"]["url"])
 
     try:
