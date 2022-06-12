@@ -109,6 +109,7 @@ def main():
         elif args == '3':
             craw_to_xray.craw_to_xray(sql_connect.read_task_sql())
         elif args == '4':
+            console.print('请访问本机5009端口查看扫描结果', style="#ADFF2F")
             run_html.main()
         elif args == '5':
             server_cmd = 'mv ./results/result.sqlite3 ./results/{}.sqlite3'.format(time.strftime("%Y_%m_%d_%H_%M_%S"))
