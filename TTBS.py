@@ -109,7 +109,7 @@ def main():
         elif args == '3':
             craw_to_xray.craw_to_xray(sql_connect.read_task_sql())
         elif args == '4':
-            console.print('这是启动可视化页面函数', style="#ADFF2F")
+            run_html.main()
         elif args == '5':
             server_cmd = 'mv ./results/result.sqlite3 ./results/{}.sqlite3'.format(time.strftime("%Y_%m_%d_%H_%M_%S"))
             stop_server_cmd = "ps -ef |grep server.py |awk '{print $2}'|xargs kill -9"
