@@ -36,7 +36,7 @@ python3 TTBS.py
 │      run_html.py  //前台启动模块
 │      server_push.py  //消息通知模块
 │      sql_connect.py  //数据库相关模块
-│      subdomain_collect.py  //子域收集模块
+│      fofa_collect.py  //子域收集模块
 │      waf_check.py  //waf检测模块
 │      
 ├─logs
@@ -56,7 +56,7 @@ python3 TTBS.py
 └─tools
     ├  crawlergo  //一个使用chrome headless模式进行URL入口收集的动态爬虫
     ├  chrome  //chrome浏览器                    
-    ├  wafcheck  //WAF指纹识别工具             
+    ├  wafW00f  //WAF指纹识别工具             
     └  xray  //一款躺着收洞的神器
 ```
 
