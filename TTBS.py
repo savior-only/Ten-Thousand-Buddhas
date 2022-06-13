@@ -7,7 +7,7 @@ import os
 from rich.console import Console
 from rich.table import Column, Table
 from lib.read_target import read_target
-from lib import config, fofa, subdomain_collect, waf_check, sql_connect, craw_to_xray
+from lib import config, fofa, waf_check, sql_connect, craw_to_xray
 
 console = Console()
 
@@ -100,31 +100,34 @@ def end():
 def main():
     banner()
     while True:
-        console.print('请输入要执行的参数ID: [bold cyan]1-5[/bold cyan]', style="#ADFF2F")
-        args = input('> ')
-        if args == '1':
-            fofa.Fofa_collect(read_target(config.target_path)) # fofa获取子域名
-        elif args == '2':
-            waf_check.waf_check(sql_connect.read_task_sql())
-        elif args == '3':
-            craw_to_xray.craw_to_xray(sql_connect.read_task_sql())
-        elif args == '4':
-            console.print('请访问本机5009端口查看扫描结果', style="#ADFF2F")
-            run_html.main()
-        elif args == '5':
-            server_cmd = 'mv ./results/result.sqlite3 ./results/{}.sqlite3'.format(time.strftime("%Y_%m_%d_%H_%M_%S"))
-            stop_server_cmd = "ps -ef |grep server.py |awk '{print $2}'|xargs kill -9"
-            stop_xray_cmd = "ps -ef |grep xray |awk '{print $2}'|xargs kill -9"
-            mv_xray_html = "mv logs/xray/xray.html logs/xray/{}.html".format(time.strftime("%Y_%m_%d_%H_%M_%S"))
-            os.system(server_cmd)
-            os.system(stop_server_cmd)
-            os.system(stop_xray_cmd)
-            os.system(mv_xray_html)
-            console.print('server及xray服务已停止\n数据库已根据当前时间戳重命名{}.sqlite3'.format(time.strftime("%Y_%m_%d_%H_%M_%S")), style="#ADFF2F")
-            break
-        else:
-            console.print('输入参数有误，请检查后输入', style="#ADFF2F")
-            sys.exit()
+        try:
+            console.print('请输入要执行的参数ID: [bold cyan]1-5[/bold cyan]', style="#ADFF2F")
+            args = input('> ')
+            if args == '1':
+                fofa.Fofa_collect(read_target(config.target_path)) # fofa获取子域名
+            elif args == '2':
+                waf_check.waf_check(sql_connect.read_task_sql())
+            elif args == '3':
+                craw_to_xray.craw_to_xray(sql_connect.read_task_sql())
+            elif args == '4':
+                console.print('请访问本机5009端口查看扫描结果', style="#ADFF2F")
+                run_html.main()
+            elif args == '5':
+                server_cmd = 'mv ./results/result.sqlite3 ./results/{}.sqlite3'.format(time.strftime("%Y_%m_%d_%H_%M_%S"))
+                stop_server_cmd = "ps -ef |grep server.py |awk '{print $2}'|xargs kill -9"
+                stop_xray_cmd = "ps -ef |grep xray |awk '{print $2}'|xargs kill -9"
+                mv_xray_html = "mv logs/xray/xray.html logs/xray/{}.html".format(time.strftime("%Y_%m_%d_%H_%M_%S"))
+                os.system(server_cmd)
+                os.system(stop_server_cmd)
+                os.system(stop_xray_cmd)
+                os.system(mv_xray_html)
+                console.print('server及xray服务已停止\n数据库已根据当前时间戳重命名{}.sqlite3'.format(time.strftime("%Y_%m_%d_%H_%M_%S")), style="#ADFF2F")
+                break
+            else:
+                console.print('输入参数有误，请检查后输入', style="#ADFF2F")
+                sys.exit()
+        except KeyboardInterrupt:
+            continue
     end()
 
 

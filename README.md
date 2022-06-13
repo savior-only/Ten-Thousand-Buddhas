@@ -30,6 +30,7 @@ python3 TTBS.py
 │  target.txt  //目标文件
 │  
 ├─lib //插件目录
+│		└  xray  //xray生成的html目录
 │      config.py  //配置模块
 │      craw_to_xray.py  //爬虫、漏洞抓取模块
 │      read_target.py  //目标读取模块
@@ -106,6 +107,17 @@ git clone https://github.com/EnableSecurity/wafw00f.git
 ![image-20220612182905347](img/image-20220612182905347.png)
 
 
+
+chrome
+
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt-get -f install
+whereis google-chrome # 将获取到的chrome路径填写到lib/config.py的相应位置
+```
+
+![image-20220613124321140](img/image-20220613124321140.png)
 
 ## 参考资源
 
