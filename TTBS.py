@@ -115,9 +115,11 @@ def main():
             server_cmd = 'mv ./results/result.sqlite3 ./results/{}.sqlite3'.format(time.strftime("%Y_%m_%d_%H_%M_%S"))
             stop_server_cmd = "ps -ef |grep server.py |awk '{print $2}'|xargs kill -9"
             stop_xray_cmd = "ps -ef |grep xray |awk '{print $2}'|xargs kill -9"
+            mv_xray_html = "mv logs/xray/xray.html logs/xray/{}.html".format(time.strftime("%Y_%m_%d_%H_%M_%S"))
             os.system(server_cmd)
             os.system(stop_server_cmd)
             os.system(stop_xray_cmd)
+            os.system(mv_xray_html)
             console.print('server及xray服务已停止\n数据库已根据当前时间戳重命名{}.sqlite3'.format(time.strftime("%Y_%m_%d_%H_%M_%S")), style="#ADFF2F")
             break
         else:

@@ -13,7 +13,7 @@ def craw_to_xray(domain_list):
     console.print('正在进行爬虫探测+漏洞探测', style="#ADFF2F")
     server_cmd = 'nohup python3 server.py > logs/server.log 2>&1 &'
     subprocess.Popen(server_cmd, shell=True)
-    xray_cmd = 'nohup ' + config.xray_path + ' webscan --listen ' + config.xray_proxy + ' --webhook-output ' + config.webhook + ' > logs/xray.log 2>&1 &'
+    xray_cmd = 'nohup ' + config.xray_path + ' webscan --listen ' + config.xray_proxy + ' --html-output ' + config.xray_html +  ' --webhook-output ' + config.webhook + ' > logs/xray.log 2>&1 &'
     subprocess.Popen(xray_cmd, shell=True)
     console.print('任务数据库连接成功',style="#ADFF2F")
     conn = sqlite3.connect(config.result_sql_path)

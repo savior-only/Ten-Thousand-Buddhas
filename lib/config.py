@@ -30,6 +30,8 @@ push_to_proxy = "http://127.0.0.1:7777"
 xray_path = './tools/xray/xray'
 #Xray被动代理地址
 xray_proxy = "127.0.0.1:7777"
+#xray输出位置
+xray_html = "logs/xray/xray.html"
 
 # webhook
 webhook_host='127.0.0.1'
