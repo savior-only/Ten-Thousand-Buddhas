@@ -26,6 +26,8 @@ def xray_webhook():
         return "ok"
     elif "sensitive/server-error" in vuln["plugin"]:
         return "ok"
+    elif "baseline" in vuln["plugin"]:
+        return "ok"
     content = """### xray发现了新漏洞
 url: {url}
 插件/漏洞: {plugin}
