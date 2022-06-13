@@ -23,8 +23,8 @@ def xray_webhook():
     vuln = data["data"]
 
     if "ratio_progress" in vuln:
-         return "ok"
-    elif "baseline/sensitive/server-error" in vuln:
+        return "ok"
+    if "baseline/sensitive/server-error" in vuln:
         return "ok"
     content = """### xray发现了新漏洞
 url: {url}
