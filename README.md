@@ -89,9 +89,9 @@ crawlergo
 ```
 cd Ten-Thousand-Buddhas/tools/
 git clone https://github.com/Qianlitp/crawlergo.git
-cd crawlergo/cmd
+cd crawlergo/cmd/crawlergo
 go build
-mv crawlergo ../
+mv crawlergo ../../
 ```
 
 ![image-20220612182840974](img/image-20220612182840974.png)
