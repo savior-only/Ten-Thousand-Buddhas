@@ -34,7 +34,6 @@ python3 TTBS.py
 │      craw_to_xray.py  //爬虫、漏洞抓取模块
 │      read_target.py  //目标读取模块
 │      run_html.py  //前台启动模块
-│      server_push.py  //消息通知模块
 │      sql_connect.py  //数据库相关模块
 │      fofa_collect.py  //子域收集模块
 │      waf_check.py  //waf检测模块
